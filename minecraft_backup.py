@@ -30,10 +30,13 @@ def parse_args(worldFolder: str, destination: str):
   model.destination = args.destination if args.destination else destination
   model.worldFolder = args.world if args.world else worldFolder
 
-  # TODO: validate that the given path is a valid minecraftWorlds directory
   if not os.path.isdir(model.worldFolder):
-    print ('the given worldFolder is not a valid minecraftWorlds directory. exiting...')
+    print ('the given worldFolder does not exist. exiting...')
     exit()
+  # TODO: validate that the given path is a valid minecraftWorlds directory
+  #if not True:
+  #  print ('the given worldFolder is not a valid minecraftWorlds directory. exiting...')
+  #  exit()
 
   if not os.path.isdir(model.destination):
     print ('the given destination is not a valid directory. exiting...')
